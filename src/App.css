@@ -1,0 +1,188 @@
+body {
+  background-color: #f3f3f3;
+}
+
+.App {
+  text-align: center;
+  margin: 20px;
+  font-family: 'Roboto', sans-serif;
+}
+
+.title {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* ===  ⬇ CSS pour mon input ⬇ === */
+
+.input-container {
+  margin-bottom: 3%;
+  margin-top: 3%;
+}
+
+.task-input {
+  padding: 10px;
+  width: 60%;
+  font-size: 1.1rem;
+  border: 2px solid #ddd;
+  border-radius: 4px;
+  outline: none;
+  transition: border-color 0.3s ease;
+  box-shadow: 0 4px 10px rgba(110, 129, 255, 0.694);
+}
+
+.task-input:focus {
+  border-color: #4CAF50;
+}
+
+
+/* ===  ⬇ CSS de mon bouton Ajouter  ⬇ === */
+
+.add-button {
+  padding: 10px 20px;
+  margin-left: 10px;
+  font-size: 1.1rem;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 32px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.add-button:hover {
+  background-color: #45a049;
+}
+
+/* ===  ⬇ CSS pour la liste des task que j'ai input ⬇ === */
+
+.task-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.task-item {
+  padding: 15px;
+  margin: 10px 0;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background-color 0.3s ease;
+  animation: fadeIn 0.3s ease;
+}
+
+/* ===  ⬇ Animation de changement de couleur quand une task est effectuée  ⬇ === */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===  ⬇ CSS pour changer la couleur d'une task quand elle est complétée ⬇ === */
+
+.task-item.completed {
+  text-decoration: line-through;
+  color: grey;
+  background-color: #e0e0e0;
+}
+
+/* ===  ⬇ CSS pour mettre un gap entre mes 2 boutons Compléter et SUpprimer ⬇ === */
+
+.button-group {
+  display: flex;
+  gap: 10px;
+}
+
+/* ===  ⬇ CSS pour mon bouton COmpléter les tâches⬇ === */
+
+.complete-button,
+.delete-button {
+  padding: 8px 12px;
+  font-size: 0.9rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.complete-button {
+  background-color: #2196F3;
+  color: white;
+  border-radius: 32px;
+  font-family: 'Roboto', sans-serif;
+}
+
+.complete-button:hover {
+  background-color: #1976D2;
+}
+
+/* ===  ⬇ CSS pour mon bouton Supprimer et Supprimer toutes les tâches complétées ⬇ === */
+
+.delete-button {
+  background-color: #f44336;
+  color: white;
+  border-radius: 32px;
+  font-family: 'Roboto', sans-serif;
+}
+
+.delete-button:hover {
+  background-color: #d32f2f;
+}
+
+.clear-completed-button {
+  padding: 10px 20px;
+  margin-top: 20px;
+  background-color: #f44336;
+  color: white;
+  border: none;
+  border-radius: 32px;
+  font-family: 'Roboto', sans-serif;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.clear-completed-button:hover {
+  background-color: #d32f2f;
+}
+
+/* ===  ⬇ Media Querie pour le responsive  ⬇ === */
+
+@media (max-width: 768px) {
+  .task-input {
+    width: 90%;
+    font-size: 1rem;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  .add-button {
+    width: 100%;
+    margin: 10px 0;
+    font-size: 1rem;
+  }
+
+  .task-item {
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+  }
+
+  .button-group {
+    display: flex;
+    margin-top: 10px;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+}
